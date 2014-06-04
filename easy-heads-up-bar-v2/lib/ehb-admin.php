@@ -86,6 +86,12 @@ class ehbAdmin
       'capability_type'     => 'page',
     );
     register_post_type( 'heads_up_bar', $args );
+
+    add_filter( 'manage_edit-heads_up_bar_columns', array($this,'ehb_column_register') );
+    add_action( 'manage_heads_up_bar_posts_custom_column', array($this,'ehb_column_display'), 10,2);
+    add_filter( 'manage_edit-heads_up_bar_sortable_columns', array($this,'ehb_column_register_sortable') );
+    // Add to admin_init function
+    #add_filter('manage_edit-gallery_columns', 'add_new_gallery_columns');
   }
   /**
    * bar update messages.
@@ -133,5 +139,54 @@ class ehbAdmin
 
     return $messages;
   }
+ 
+  // Register the column
+  function ehb_column_register( $columns ) {
+    global $ehb_meta_prefix;
+    $new_columns['cb'] = '<input type="checkbox" />';
+    $new_columns['title'] = __('Bar Title', 'ehb_lang');
+    $new_columns["{$ehb_meta_prefix}theme"] = __('Bar Theme', 'ehb_lang');
+    $new_columns["{$ehb_meta_prefix}start_date"]  = __( 'Start Date', 'ehb_lang' );
+    $new_columns["{$ehb_meta_prefix}end_date"]  = __( 'End Date', 'ehb_lang' );
+    $new_columns['author'] = __('Added By', 'ehb_lang');
+    $new_columns['date']  = __( 'Created/Status', 'ehb_lang' );
+    return $new_columns;
+  }
+
+  // Display the column content
+  function ehb_column_display( $column_name, $post_id ) {
+    global $ehb_meta_prefix;
+    switch ($column_name) {
+      case "{$ehb_meta_prefix}start_date":
+        $start_date = get_post_meta($post_id, "{$ehb_meta_prefix}start_date" , true);
+        echo apply_filters('get_the_date', $start_date);
+        break;
+      case "{$ehb_meta_prefix}end_date":
+        $end_date = get_post_meta($post_id, "{$ehb_meta_prefix}end_date" , true);
+        echo apply_filters('get_the_date', $end_date);
+        break;
+      case "{$ehb_meta_prefix}theme":
+        $bar_location = ( get_post_meta( $post_id, "{$ehb_meta_prefix}bar_location", true ) == 'top' ) ? 'bottom' : 'top' ;
+        $bar_bg_color = get_post_meta($post_id, "{$ehb_meta_prefix}bar_bg_color" , true);
+        $bar_border_color = get_post_meta($post_id, "{$ehb_meta_prefix}bar_border_color" , true);
+        $text_color = get_post_meta($post_id, "{$ehb_meta_prefix}text_color" , true);
+        $link_color = get_post_meta($post_id, "{$ehb_meta_prefix}link_color" , true);
+        echo "<div style='background-color:{$bar_bg_color} ;border-{$bar_location}: 4px solid {$bar_border_color};padding: 6px;'>";
+        echo "<div style='display:inline-block;color:{$text_color};text-align:center;padding:2px'>Text</div>";
+        echo "<div style='cursor: pointer;display:inline-block;color:{$link_color};text-align:center;padding:2px;text-decoration:underline'>Link</div>";
+        echo "</div>";
+        break;
+    } 
+  }
+
+  // Register the column as sortable
+  function ehb_column_register_sortable( $columns ) {
+    global $ehb_meta_prefix;
+    return $columns;
+  }
 
 }
+
+
+
+// EOF 
