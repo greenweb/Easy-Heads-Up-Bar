@@ -119,13 +119,13 @@ function ehb_check_table_existance($table_name)
   return false;
 }
 
-function ehu_compare_str_dates($date_1,$date_2,$operation="g")
+function ehu_compare_str_dates($date_1,$date_2,$operation="<=")
 {
  
   $date_1  = strtotime($date_1); 
   $date_2  = strtotime($date_2); 
   
-  if($operation==='g') // greater then or == to 0
+  if($operation==='<=') // greater then or == to 0
   {
      if ($date_1 <= $date_2) 
      {
@@ -134,12 +134,10 @@ function ehu_compare_str_dates($date_1,$date_2,$operation="g")
      return false;
      }
   }
-  if($operation==='l') // lesser then or == to 0
+  if($operation==='>=') // lesser then or == to 0
   {
       if ($date_1 >= $date_2)
       {
-        
-        #die("$date_1 <= $date_2");
         return true;
       } else {
         return false;
