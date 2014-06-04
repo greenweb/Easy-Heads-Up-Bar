@@ -67,6 +67,9 @@ Author URI: http://www.greenvillweb.us
   include 'lib/ehb-metaboxs.php';
 
   $ehbAdmin = new ehbAdmin();
+
+  // load front end 
+  include 'lib/ehb-frontend.php';
   
   register_activation_hook( __FILE__, 'ehb_activate' );
 
