@@ -65,7 +65,7 @@ function ehb_metaboxes( array $meta_boxes ) {
 			array(
 				'name'    => __( 'Border Color', 'ehb_lang' ),
 				'desc'    => __( 'If you don\'t want a visible border set its color to be same as the background color of your bar', 'ehb_lang' ),
-				'id'      => $prefix . 'bar_bg_color',
+				'id'      => $prefix . 'bar_border_color',
 				'type'    => 'colorpicker',
 				'default' => '#000000'
 			),
