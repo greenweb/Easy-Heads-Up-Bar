@@ -52,34 +52,6 @@ Install the plugin via WordPress's installation system then activate it
 
 Feel free to ask any questions you may have at the [Support Forum](http://wordpress.org/support/plugin/easy-heads-up-bar)
 
-## Screenshots ##
-
-###1. This an example Easy Heads Up Bar on a page
-###
-![This an example Easy Heads Up Bar on a page
-](https://ps.w.org/easy-heads-up-bar/assets/screenshot-1.jpg)
-
-###2. This is the Easy Heads Up Bar manager
-###
-![This is the Easy Heads Up Bar manager
-](https://ps.w.org/easy-heads-up-bar/assets/screenshot-2.jpg)
-
-###3. This is the Easy Heads Up Bar editor
-###
-![This is the Easy Heads Up Bar editor
-](https://ps.w.org/easy-heads-up-bar/assets/screenshot-3.jpg)
-
-###4. Color for the Easy Heads Up Bar in the Editor for the Easy Heads Up Bar
-###
-![Color for the Easy Heads Up Bar in the Editor for the Easy Heads Up Bar
-](https://ps.w.org/easy-heads-up-bar/assets/screenshot-4.jpg)
-
-###5. Character Count down in the Editor for the Easy Heads Up Bar
-###
-![Character Count down in the Editor for the Easy Heads Up Bar
-](https://ps.w.org/easy-heads-up-bar/assets/screenshot-5.jpg)
-
-
 ## Upgrade Notice ##
 
 Please note this is still a beta release.
