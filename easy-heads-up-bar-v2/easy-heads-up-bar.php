@@ -44,6 +44,7 @@ Author URI: http://www.greenvillweb.us
   $ehb_the_web_url        = get_bloginfo('url');
   $ehb_the_blog_name      = get_bloginfo('name');
   $ehb_the_default_email  = get_bloginfo('admin_email');
+  $ehb_meta_prefix        = '_ehb_';
   
   // check for ssl 
   if ( preg_match( '/^https/', $ehb_plugin_loc ) && !preg_match( '/^https/', get_bloginfo('url') ) )
