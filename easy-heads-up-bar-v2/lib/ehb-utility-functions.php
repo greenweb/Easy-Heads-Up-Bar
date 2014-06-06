@@ -119,30 +119,59 @@ function ehb_check_table_existance($table_name)
   return false;
 }
 
-function ehu_compare_str_dates($date_1,$date_2,$operation="<=")
+/**
+ * Function to calculate date or time difference.
+ * 
+ * Function to calculate date or time difference. Returns an array or
+ * false on error.
+ *
+ * @author       J de Silva                             <giddomains@gmail.com>
+ * @copyright    Copyright &copy; 2005, J de Silva
+ * @link         http://www.gidnetwork.com/b-16.html    Get the date / time difference with PHP
+ * @param        string                                 $start
+ * @param        string                                 $end
+ * @return       array
+ */
+function ehu_check_date( $start, $end )
 {
- 
-  $date_1  = strtotime($date_1); 
-  $date_2  = strtotime($date_2); 
-  
-  if($operation==='<=') // greater then or == to 0
-  {
-     if ($date_1 <= $date_2) 
-     {
-      return true;
-     } else {
-     return false;
-     }
-  }
-  if($operation==='>=') // lesser then or == to 0
-  {
-      if ($date_1 >= $date_2)
-      {
-        return true;
-      } else {
+    $uts['start']      =    strtotime( $start );
+    $uts['end']        =    strtotime( $end );
+    if( $uts['start']!==-1 && $uts['end']!==-1 )
+    {
+        if( $uts['end'] >= $uts['start'] )
+        {
+            $diff    =    $uts['end'] - $uts['start'];
+            if( $days=intval((floor($diff/86400))) )
+                $diff = $diff % 86400;
+            if( $hours=intval((floor($diff/3600))) )
+                $diff = $diff % 3600;
+            if( $minutes=intval((floor($diff/60))) )
+                $diff = $diff % 60;
+            $diff    =    intval( $diff );            
+            return( array('days'=>$days, 'hours'=>$hours, 'minutes'=>$minutes, 'seconds'=>$diff) );
+        }
+        else
+        {
+            return false;
+            //trigger_error( "Ending date/time is earlier than the start date/time", E_USER_WARNING );
+        }
+    }
+    else
+    {
         return false;
-      }
-  }
+        //trigger_error( "Invalid date/time data detected", E_USER_WARNING );
+    }
+    return false;
+}
+
+function array_random($arr, $num = 1) {
+    shuffle($arr);
+    
+    $r = array();
+    for ($i = 0; $i < $num; $i++) {
+        $r[] = $arr[$i];
+    }
+    return $num == 1 ? $r[0] : $r;
 }
 
 //EOF 

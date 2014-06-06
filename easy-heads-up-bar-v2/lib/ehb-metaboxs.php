@@ -16,9 +16,9 @@ add_filter( 'cmb_meta_boxes', 'ehb_metaboxes' );
  * @return array
  */
 function ehb_metaboxes( array $meta_boxes ) {
-
+	global $ehb_meta_prefix;
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_ehb_';
+	$prefix = $ehb_meta_prefix;
 
 	/**
 	 * Sample metabox to demonstrate each field type included

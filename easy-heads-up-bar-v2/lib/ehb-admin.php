@@ -21,7 +21,7 @@ class ehbAdmin
       return;
     // Setup help tab args.
     $making_use_of_txt =  '<h3>'.__('Using Easy Heads Up Bar','ehb_lang').'</h3>';
-    $ehb_forum_text  = "<h3>". __("Do you need more help?",'ehb_lang')."</h3><p>". __("If you need support or want to suggest improvements to the plugin please visit the ",'ehb_lang');
+    $ehb_forum_text  = "<h3>".__("Do you need more help?",'ehb_lang')."</h3><p>". __("If you need support or want to suggest improvements to the plugin please visit the ",'ehb_lang');
     $ehb_forum_text .= '<a href="http://wordpress.org/support/plugin/easy-sign-up/">'.__("plugin's support forum",'ehb_lang').'</a></p>';
 
     $making_use_of_args = array(
