@@ -74,7 +74,7 @@ class ehbFrontend
               $bar_html .= " style='background-color:{$bar_bg_color};border-{$bar_border_locatoin}: 4px solid {$bar_border_color};padding: 6px;'>";
               $bar_html .= " <div style='display:inline-block;color:{$bar_text_color};padding:2px'>";
               $bar_html .=    do_shortcode( $bar_content );
-              $bar_html .= " </div>";
+              $bar_html .= " </div><div class=\"ehu-close-tab-{$bar_location} ehu-open\"></div>";
               $bar_html .= "</div>";
               $bar_array[$i] = $bar_html; $i++;
               //reset the $bar_html
