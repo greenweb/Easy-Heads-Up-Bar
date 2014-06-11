@@ -72,10 +72,37 @@ class ehbFrontend
               $bar_html .= " data-bar-location='{$bar_location}'";
               $bar_html .= " data-hide-bar='{$bar_hide}'";
               $bar_html .= " style='background-color:{$bar_bg_color};border-{$bar_border_locatoin}: 4px solid {$bar_border_color};padding: 6px;'>";
-              $bar_html .= " <div style='display:inline-block;color:{$bar_text_color};padding:2px'>";
-              $bar_html .=    do_shortcode( $bar_content );
-              $bar_html .= " </div><div class=\"ehu-close-tab-{$bar_location} ehu-open\"></div>";
+              
+              $bar_html .= "  <div id='ehu-close-button' ";
+              $bar_html .=      "style='display:block;";
+              $bar_html .=      "float:right;";
+              $bar_html .=      "background-color:{$bar_text_color};";
+              $bar_html .=      "color:{$bar_bg_color};";
+              $bar_html .=      "padding:6px 10px;";
+              $bar_html .=      "margin-top:-2px;";
+              $bar_html .=      "margin-right:10px;";
+              $bar_html .=      "font-weight:bolder;";
+              $bar_html .=      "cursor:pointer;'>";
+              $bar_html .=      "X</div>";
+
+              $bar_html .= "  <div style='display:block;color:{$bar_text_color};padding:2px;margin:0 auto;width: 90%;'>";
+              $bar_html .=      apply_filters('the_content', $bar_content); 
+              $bar_html .= "  </div>";
+              $bar_html .= "  <br style='clear:both;height:1px;'>";
               $bar_html .= "</div>";
+              $bar_html .= "  <div id='ehu-open-button' ";
+              $bar_html .=      "style='display:inline;";
+              $bar_html .=      "visibility: hidden;";
+              $bar_html .=      "position: fixed;";
+              $bar_html .=      "z-index: 100001;";
+              $bar_html .=      "{$bar_location}:4px;";
+              $bar_html .=      "right: 16px;";
+              $bar_html .=      "background-color:{$bar_text_color};";
+              $bar_html .=      "color:{$bar_bg_color};";
+              $bar_html .=      "padding:6px 10px;";
+              $bar_html .=      "font-weight:bold;";
+              $bar_html .=      "cursor:pointer;'>";
+              $bar_html .=      "HB</div>";
               $bar_array[$i] = $bar_html; $i++;
               //reset the $bar_html
               $bar_html = "";
