@@ -126,10 +126,11 @@ class ehbFrontend
   /**
    * Load the scripts
    */
-  function ehu_load_scripts() {
+  function ehu_load_scripts() 
+  {
     $ehb_js_url     = EHB_URL. 'js/ehu.js';
     wp_enqueue_script('ehb_js_url',$ehb_js_url,array('jquery'), EHB_VERSION,true );
-    // wp_enqueue_style( 'style-name', get_stylesheet_uri() );
+    
   }
 
 
