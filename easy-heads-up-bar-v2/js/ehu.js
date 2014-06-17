@@ -16,45 +16,76 @@ jQuery(document).ready(function($) {
 
 		// close button
 		var $dhuCloseButton = $('#ehu-close-button');
-		var $dhuCloseButtonPosition = $dhuCloseButton.position();
-		
-		// Open button
-		var $dhuOpenButton = $('#ehu-open-button');
-		if ($barLocatoin=='top') 
-		{
+		if (typeof $dhuCloseButton.html() !== 'undefined') {
+			var $dhuCloseButtonPosition = $dhuCloseButton.position();
+			
+			// Open button
+			var $dhuOpenButton = $('#ehu-open-button');
+			if ($barLocatoin=='top') 
+			{
+				$dhuOpenButton.css({
+					'top': $dhuCloseButtonPosition.top,	
+				});
+			}else{
+				$dhuOpenButton.css({
+					'bottom': $dhuCloseButtonPosition.bottom,	
+				})
+			};
 			$dhuOpenButton.css({
-				'top': $dhuCloseButtonPosition.top,	
+				'right': $dhuCloseButtonPosition.right,	
 			});
-		}else{
-			$dhuOpenButton.css({
-				'bottom': $dhuCloseButtonPosition.bottom,	
-			})
-		};
-		$dhuOpenButton.css({
-			'right': $dhuCloseButtonPosition.right,	
-		});
 
-		// hide action
-		$dhuCloseButton.click(function() {
-		  $( this ).parent().slideUp( "fast", function() {
-		    	$dhuOpenButton.css({
-						'visibility': 'visible'	
-					});
-		  });
-		});
+			// hide action
+			$dhuCloseButton.click(function() {
+			  $( this ).parent().slideUp( "fast", function() {
+			    	$dhuOpenButton.css({
+							'visibility': 'visible'	
+						});
+			  });
+			});
 
-		// hide action
-		$dhuOpenButton.click(function() {
-			$dhuOpenButton.css({'visibility': 'hidden'	});
-		  $ehuBar.slideDown( "fast", function() {
-				
-				if ($barLocatoin=='top') 
-				{
-					window.scrollTo(0,0);
-				}else{
-					window.scrollTo(0,$dhuCloseButtonPosition.top);
-				};
-		  });
-		});
+			// hide action
+			$dhuOpenButton.click(function() {
+				$dhuOpenButton.css({'visibility': 'hidden'	});
+			  $ehuBar.slideDown( "fast", function() {
+					
+					if ($barLocatoin=='top') 
+					{
+						window.scrollTo(0,0);
+					}else{
+						window.scrollTo(0,$dhuCloseButtonPosition.top);
+					};
+			  });
+			});
+		}; // end check for button
 	}; // end Check for bar
 });
+
+// Cookie script care of these great guys http://www.quirksmode.org/js/cookies.html
+
+function ehuCreateCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function ehuReadCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function ehuEraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+// EOF
