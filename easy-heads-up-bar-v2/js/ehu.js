@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
 
 			// hide action
 			$dhuCloseButton.click(function() {
-			  $( this ).parent().slideUp( "fast", function() {
+			  $( this ).parent().slideUp( "100", function() {
 			    	$dhuOpenButton.css({
 							'visibility': 'visible'	
 						});
@@ -47,8 +47,7 @@ jQuery(document).ready(function($) {
 			// hide action
 			$dhuOpenButton.click(function() {
 				$dhuOpenButton.css({'visibility': 'hidden'	});
-			  $ehuBar.slideDown( "fast", function() {
-					
+			  $ehuBar.slideDown( "slow", function() {
 					if ($barLocatoin=='top') 
 					{
 						window.scrollTo(0,0);
