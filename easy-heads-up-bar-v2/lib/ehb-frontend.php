@@ -61,11 +61,15 @@ class ehbFrontend
                 }else{
                   $bar_border_locatoin = "top";
                 }
-              $bar_bg_color     = get_post_meta( $bar_ID,"{$prefix}bar_bg_color",      true );
-              $bar_border_color = get_post_meta( $bar_ID,"{$prefix}bar_border_color",  true );
-              $bar_text_color   = get_post_meta( $bar_ID,"{$prefix}text_color",        true );
-              $bar_link_color   = get_post_meta( $bar_ID,"{$prefix}link_color",        true );
-              $bar_hide         = get_post_meta( $bar_ID,"{$prefix}hide_bar",          true );
+              $bar_bg_color       = get_post_meta( $bar_ID,"{$prefix}bar_bg_color",      true );
+              $bar_border_color   = get_post_meta( $bar_ID,"{$prefix}bar_border_color",  true );
+              $bar_text_color     = get_post_meta( $bar_ID,"{$prefix}text_color",        true );
+              $bar_link_color     = get_post_meta( $bar_ID,"{$prefix}link_color",        true );
+              $bar_hide           = get_post_meta( $bar_ID,"{$prefix}hide_bar",          true );
+              $bar_content_width  = get_post_meta( $bar_ID,"{$prefix}bar_content_width", true );
+              // Set a default width to 100%
+              $bar_content_width  = ( $bar_content_width == "" )  ? "80" : $bar_content_width;
+              
               // lets build a bar workshop ;)
               $bar_html .= "<div id='ehu-bar'";
               $bar_html .= " data-bar-link-color='{$bar_link_color}'";
@@ -86,7 +90,7 @@ class ehbFrontend
               $bar_html .=      "cursor:pointer;'>";
               $bar_html .=      "X</div>";
 
-              $bar_html .= "  <div style='display:block;color:{$bar_text_color};padding:2px;margin:0 auto;width: 90%;'>";
+              $bar_html .= "  <div id='ehu-bar-content' style='display:block;color:{$bar_text_color};padding:2px;margin:0 auto;width:{$bar_content_width}%;'>";
               $bar_html .=      apply_filters('the_content', $bar_content); 
               $bar_html .= "  </div>";
               $bar_html .= "  <br style='clear:both;height:1px;'>";
