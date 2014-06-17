@@ -41,11 +41,15 @@ jQuery(document).ready(function($) {
 			    	$dhuOpenButton.css({
 							'visibility': 'visible'	
 						});
+						// Set Cookie
+						ehuCreateCookie('ehuBarStatus','hidden', 7);
 			  });
 			});
 
 			// hide action
 			$dhuOpenButton.click(function() {
+				// Unset Cookie
+				ehuEraseCookie('ehuBarStatus');
 				$dhuOpenButton.css({'visibility': 'hidden'	});
 			  $ehuBar.slideDown( "slow", function() {
 					if ($barLocatoin=='top') 
@@ -56,6 +60,14 @@ jQuery(document).ready(function($) {
 					};
 			  });
 			});
+
+			// Check the Cookie
+			var $ehuCookie = ehuReadCookie('ehuBarStatus');
+
+			if($ehuCookie == 'hidden') {
+				$dhuCloseButton.trigger( "click" );
+			}
+
 		}; // end check for button
 	}; // end Check for bar
 });
@@ -84,7 +96,7 @@ function ehuReadCookie(name) {
 }
 
 function ehuEraseCookie(name) {
-	createCookie(name,"",-1);
+	ehuCreateCookie(name,"",-1);
 }
 
 // EOF
