@@ -77,18 +77,21 @@ class ehbFrontend
               $bar_html .= " data-hide-bar='{$bar_hide}'";
               $bar_html .= " style='background-color:{$bar_bg_color};border-{$bar_border_locatoin}: 4px solid {$bar_border_color};padding: 6px;'>";
               
-              $bar_html .= "  <div id='ehu-close-button' ";
-              $bar_html .=      "title='".__('Close Bar','ehb_lang')."' ";              
-              $bar_html .=      "style='display:block;";
-              $bar_html .=      "float:right;";
-              $bar_html .=      "background-color:{$bar_text_color};";
-              $bar_html .=      "color:{$bar_bg_color};";
-              $bar_html .=      "padding:6px 10px;";
-              $bar_html .=      "margin-top:-2px;";
-              $bar_html .=      "margin-right:10px;";
-              $bar_html .=      "font-weight:bolder;";
-              $bar_html .=      "cursor:pointer;'>";
-              $bar_html .=      "X</div>";
+              if( $bar_hide == "yes" )
+              {
+                $bar_html .= "  <div id='ehu-close-button' ";
+                $bar_html .=      "title='".__('Close Bar','ehb_lang')."' ";              
+                $bar_html .=      "style='display:block;";
+                $bar_html .=      "float:right;";
+                $bar_html .=      "background-color:{$bar_text_color};";
+                $bar_html .=      "color:{$bar_bg_color};";
+                $bar_html .=      "padding:6px 10px;";
+                $bar_html .=      "margin-top:-2px;";
+                $bar_html .=      "margin-right:10px;";
+                $bar_html .=      "font-weight:bolder;";
+                $bar_html .=      "cursor:pointer;'>";
+                $bar_html .=      "X</div>";
+              }
 
               $bar_html .= "  <div id='ehu-bar-content' style='display:block;color:{$bar_text_color};padding:2px;margin:0 auto;width:{$bar_content_width}%;'>";
               $bar_html .=      apply_filters('the_content', $bar_content); 
