@@ -96,6 +96,21 @@ function ehb_metaboxes( array $meta_boxes ) {
 				'default' => 'all',
 			),
 			array(
+			    'name'    => __( 'Bar Content Width', 'ehb_lang' ),
+			    'desc'    => __( 'This sets the width of the easy sign up bar\'s content.<br/>Very helpful for narrow websites', 'ehb_lang' ),
+			    'id'      => $prefix . 'bar_content_width',
+			    'type'    => 'select',
+			    'options' => array(
+			        '100' => __( '100 %', 'ehb_lang' ),
+			        '90'  => __( '90 %', 'ehb_lang' ),
+			        '80' 	=> __( '80 %', 'ehb_lang' ),
+			        '70'	=> __( '70 %', 'ehb_lang' ),
+			        '60' 	=> __( '60 %', 'ehb_lang' ),
+			        '50' 	=> __( '50 %', 'ehb_lang' )
+			    ),
+			    'default' => '100',
+			),
+			array(
 				'name'    => __( 'Bar Location', 'ehb_lang' ),
 				// 'desc'    => __( 'field description (optional)', 'ehb_lang' ),
 				'id'      => $prefix . 'bar_location',
