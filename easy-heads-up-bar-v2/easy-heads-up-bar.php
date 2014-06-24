@@ -71,3 +71,6 @@ Author URI: http://www.greenvillweb.us
   // load front end 
   include 'lib/ehb-frontend.php';
 
+  // @todo remove this on next major update
+  include 'lib/ehb-migrate-old-data.php';
+
