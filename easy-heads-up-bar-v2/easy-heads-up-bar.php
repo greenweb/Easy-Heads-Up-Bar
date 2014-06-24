@@ -70,11 +70,4 @@ Author URI: http://www.greenvillweb.us
 
   // load front end 
   include 'lib/ehb-frontend.php';
-  
-  register_activation_hook( __FILE__, 'ehb_activate' );
 
-  function ehb_activate()
-  {
-    
-  }
-  
