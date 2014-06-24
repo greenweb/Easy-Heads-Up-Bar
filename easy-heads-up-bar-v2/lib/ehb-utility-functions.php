@@ -102,22 +102,6 @@ function ehb_plugin_url($path='')
   return plugins_url( $path, __FILE__ );
 }
 
-/**
-* @name ehb_check_table_existance
-* @param $table_name string
-**/
-function ehb_check_table_existance($table_name)
-{
-  global $wpdb;
-  foreach ($wpdb->get_col("SHOW TABLES",0) as $table )
-  {
-    if ($table == $table_name)
-    {
-      return true;
-    }
-  }
-  return false;
-}
 
 /**
  * Function to calculate date or time difference.
