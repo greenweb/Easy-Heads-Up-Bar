@@ -13,6 +13,8 @@ The Easy Heads Up Bar Plugin allows you to quickly add a customizable notificati
 
 This plugin adds an easy to use notification bar to the top of your WordPress website
 
+[youtube https://www.youtube.com/watch?v=DOsTdfnmtmI]
+
 = Key Features =
 
 * Customizable color schemes 
