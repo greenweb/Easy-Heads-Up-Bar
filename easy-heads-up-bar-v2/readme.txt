@@ -70,11 +70,12 @@ Install the plugin via WordPress's installation system then activate it
 
 == Screenshots ==
 
-1. This an example Easy Heads Up Bar on a page
-2. This is the Easy Heads Up Bar manager
-3. This is the Easy Heads Up Bar editor
-4. Color for the Easy Heads Up Bar in the Editor for the Easy Heads Up Bar
-5. Character Count down in the Editor for the Easy Heads Up Bar
+1. Easy Heads Up Bar manager
+2. Easy Heads Up Bar editor
+3. Easy Heads Up Bar supports shortcodes
+4. Easy Heads Up Bar is responsive
+5. Key features of the Easy Heads Up Bar
+6. New features added to version 2 of the Easy Heads Up Bar
 
 == Changelog ==
 
