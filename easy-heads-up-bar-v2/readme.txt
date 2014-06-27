@@ -78,7 +78,8 @@ Install the plugin via WordPress's installation system then activate it
 6. New features added to version 2 of the Easy Heads Up Bar
 
 == Changelog ==
-
+= 2.1 =
+Changed out a br tag for a span tag to address a spacing issue in IE9
 = 2.0 =
 
 *New features:*
@@ -92,10 +93,10 @@ Install the plugin via WordPress's installation system then activate it
 * Add images to bars
 * Use another plugin's shortcodes
 * Choose between the top or the bottom of a page to display your bar
-* Allow your users to hide and unhide the Heads Up Bar
+* Allow your users to hide and un-hide the Heads Up Bar
 
 == Upgrade Notice ==
 
 This is a major update the old interface this is completely replaced with the standard WordPress user interface. 
-Exsiting bars will be automaticaly converted to the new system. 
+Existing bars will be automatically converted to the new system. 
 The wp_ehu_bar & wp_ehu_stats tables will be removed from the database as these where added by the last version of the plugin and need to be cleaned up.
