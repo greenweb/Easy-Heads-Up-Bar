@@ -80,37 +80,15 @@ class ehbFrontend
               if( $bar_hide == "yes" )
               {
                 $bar_html .= "  <div id='ehu-close-button' ";
-                $bar_html .=      "title='".__('Close Bar','ehb_lang')."' ";              
-                $bar_html .=      "style='display:block;";
-                $bar_html .=      "float:right;";
-                $bar_html .=      "background-color:{$bar_text_color};";
-                $bar_html .=      "color:{$bar_bg_color};";
-                $bar_html .=      "padding:6px 10px;";
-                $bar_html .=      "margin-top:-2px;";
-                $bar_html .=      "margin-right:10px;";
-                $bar_html .=      "font-weight:bolder;";
-                $bar_html .=      "cursor:pointer;'>";
                 $bar_html .=      "X</div>";
               }
 
               $bar_html .= "  <div id='ehu-bar-content' style='display:block;color:{$bar_text_color};padding:2px;margin:0 auto;width:{$bar_content_width}%;'>";
               $bar_html .=      apply_filters('the_content', $bar_content); 
               $bar_html .= "  </div>";
-              $bar_html .= "  <span style='clear:both;height:1px;'></span>";
+              //$bar_html .= "  <span style='clear:both;height:1px;'></span>";
               $bar_html .= "</div>";
               $bar_html .= "  <div id='ehu-open-button' ";
-              $bar_html .=      "style='display:inline;";
-              $bar_html .=      "visibility: hidden;";
-              $bar_html .=      "position: fixed;";
-              $bar_html .=      "z-index: 100001;";
-              $bar_html .=      "{$bar_location}:4px;";
-              $bar_html .=      "right: 16px;";
-              $bar_html .=      "background-color:{$bar_text_color};";
-              $bar_html .=      "color:{$bar_bg_color};";
-              $bar_html .=      "padding:5px 9px;";
-              $bar_html .=      "border: 2px solid {$bar_bg_color};";
-              $bar_html .=      "font-weight:bold;font-size: 1.4em;";
-              $bar_html .=      "cursor:pointer;' ";
               $bar_html .=      "title='".__('Open Bar','ehb_lang')."'>";
               $bar_html .=      "&curren;";
               $bar_html .= "  </div>";
