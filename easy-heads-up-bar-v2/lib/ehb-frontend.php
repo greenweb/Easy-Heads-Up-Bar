@@ -80,6 +80,7 @@ class ehbFrontend
               if( $bar_hide == "yes" )
               {
                 $bar_html .= "  <div id='ehu-close-button' ";
+                $bar_html .=      "title='".__('Close Bar','ehb_lang')."'>";
                 $bar_html .=      "X</div>";
               }
 
