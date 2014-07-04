@@ -119,8 +119,10 @@ class ehbFrontend
   function ehu_load_scripts() 
   {
     $ehb_js_url     = EHB_URL. 'js/ehu.js';
+    $ehb_css_url    = EHB_URL. 'css/ehu.css';
     wp_enqueue_script('ehb_js_url',$ehb_js_url,array('jquery'), EHB_VERSION,true );
-    
+    wp_register_style('ehb_stylesheet', $ehb_css_url,false, EHB_VERSION,'all');
+    wp_enqueue_style( 'ehb_stylesheet');
   }
 
 
