@@ -50,11 +50,7 @@ Author URI: http://www.greenvillweb.us
   if ( preg_match( '/^https/', $ehb_plugin_loc ) && !preg_match( '/^https/', get_bloginfo('url') ) )
     $ehb_plugin_loc = preg_replace( '/^https/', 'http', $ehb_plugin_loc );
   
-  
-  
   define( 'EHB_URL',            plugin_dir_url(__FILE__) );
-  $get_ehb_version = get_option( 'ehb_version', false );
-  $update_ehb_version = (!$get_ehb_version) ? update_option( 'ehb_version', EHB_VERSION ) : false;
   define( 'EHB_VERSION',        '2.1.2' );
   
   include 'lib/ehb-utility-functions.php';
