@@ -122,7 +122,7 @@ function ehu_check_date( $start, $end )
     $uts['end']        =    strtotime( $end );
     if( $uts['start']!==-1 && $uts['end']!==-1 )
     {
-        if( $uts['end'] >= $uts['start'] )
+        if( $uts['end'] > $uts['start'] )
         {
             $diff    =    $uts['end'] - $uts['start'];
             if( $days=intval((floor($diff/86400))) )
@@ -137,13 +137,11 @@ function ehu_check_date( $start, $end )
         else
         {
             return false;
-            //trigger_error( "Ending date/time is earlier than the start date/time", E_USER_WARNING );
         }
     }
     else
     {
         return false;
-        //trigger_error( "Invalid date/time data detected", E_USER_WARNING );
     }
     return false;
 }
