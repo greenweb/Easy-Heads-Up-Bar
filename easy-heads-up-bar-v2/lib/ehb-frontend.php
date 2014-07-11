@@ -57,7 +57,12 @@ class ehbFrontend
             if(false !== $check_end_date)
             {
               $bar_content      = get_post_meta( $bar_ID,"{$prefix}bar_content",       true );
+              if ($bar_content=="") {
+                $bar_content = get_the_title( $bar_ID );
+                if ($bar_content=="") $bar_content = get_bloginfo( 'name' );
+              }
               $bar_location     = get_post_meta( $bar_ID,"{$prefix}bar_location",      true );
+              if($bar_location=='') $bar_location='top';
                 if($bar_location=='top')
                 {
                   $bar_border_locatoin = "bottom";
