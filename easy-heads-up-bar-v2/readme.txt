@@ -78,6 +78,9 @@ Install the plugin via WordPress's installation system then activate it.
 6. New features added to version 2 of the Easy Heads Up Bar
 
 == Changelog ==
+= 2.1.4 =
+
+Wrote a function to stop the shareaholic plugin from pushing the social links onto the plugin bar
 
 = 2.1.3 =
 
@@ -87,6 +90,7 @@ Minor change to work around the shareaholic plugin
 * Added  do_shortcode( $bar_content );
 
 = 2.1.2 =
+
 * New Bar Display option that floats the bar over the content and fixes it while scrolling. 
 * Added jQuery to ensure that the bar display well if there is the WordPress Admin Bar above it.
 
