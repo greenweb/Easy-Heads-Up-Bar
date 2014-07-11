@@ -43,6 +43,7 @@ function ehb_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'end_date',
 				'type' => 'text_date',
 			),
+
 			array(
 				'name' => __( 'Bar Content', 'ehb_lang' ),
 				'id'   => $prefix . 'bar_content',
