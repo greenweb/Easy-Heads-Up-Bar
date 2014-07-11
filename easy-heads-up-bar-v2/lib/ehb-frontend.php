@@ -6,11 +6,12 @@ class ehbFrontend
 {
   function __construct()
   {
-    #add_filter( 'the_content', array(&$this, 'ehu_show_bar') );
-    add_filter( 'wp_footer', array(&$this, 'ehu_show_bar') );
+    add_action('wp_loaded',array(&$this, 'ehu_run_show_bar'));
     add_action( 'wp_enqueue_scripts', array(&$this, 'ehu_load_scripts') );
   }
-
+  function ehu_run_show_bar(){
+     add_filter( 'wp_footer', array(&$this, 'ehu_show_bar') );
+  }
   function ehu_show_bar()
   {
     // Set up the vars
