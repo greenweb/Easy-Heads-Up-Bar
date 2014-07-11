@@ -20,6 +20,7 @@ class ehbFrontend
     $bar_html   = "";
     $bar_array  = "";
     $today      = current_time('m/d/Y');
+    $yesterday  = date('m/d/Y', strtotime($today) - 86400);
     $tomorrow   = date('m/d/Y', strtotime($today) + 86400);
     $frontpage  = is_front_page();
     $i = 0;
@@ -44,8 +45,9 @@ class ehbFrontend
         if( ($show_where == 'interior' ) && ($frontpage) ) $show=false;        
         if( $show )
         {
-          $start_date = get_post_meta( $bar_ID,"{$prefix}start_date", true ); 
-          $start_date = ($start_date=="") ? $today : $start_date ;   
+          $start_date = get_post_meta( $bar_ID,"{$prefix}start_date", true );
+          $start_date = ($start_date=="") ? $yesterday : $start_date ;
+          $start_date = ($start_date==$today) ? $yesterday : $start_date ;
           $check_start_date = ehu_check_date($start_date,  $today);
           if(false !== $check_start_date)
           {
