@@ -12,6 +12,9 @@ class ehbFrontend
   function ehu_run_show_bar(){
      add_filter( 'wp_footer', array(&$this, 'ehu_show_bar') );
   }
+  /**
+  * Displays the bar on the front end
+  **/
   function ehu_show_bar()
   {
     // Set up the vars
