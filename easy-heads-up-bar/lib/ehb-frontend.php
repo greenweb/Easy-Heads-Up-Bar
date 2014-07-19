@@ -86,6 +86,7 @@ class ehbFrontend
               
               // lets build a bar workshop ;)
               $bar_html .= "<div id='ehu-bar'";
+              $bar_html .= " data-bar-text-color='{$bar_text_color}'";
               $bar_html .= " data-bar-link-color='{$bar_link_color}'";
               $bar_html .= " data-bar-location='{$bar_location}'";
               $bar_html .= " data-hide-bar='{$bar_hide}'";
