@@ -100,8 +100,7 @@ class ehbFrontend
               }
 
               $bar_html .= "  <div id='ehu-bar-content' style='display:block;color:{$bar_text_color};padding:2px;margin:0 auto;width:{$bar_content_width}%;'>";
-              $clean_up_shareaholic = ehu_clean_up_shareaholic(); // located in ehb-utility-functions.php
-              $bar_html .= apply_filters('the_content', $bar_content); 
+              $bar_html .= do_shortcode($bar_content); 
               $bar_html .= "  </div>";
               $bar_html .= "</div>";
               $bar_html .= "  <div id='ehu-open-button' ";
