@@ -99,7 +99,7 @@ class ehbFrontend
                 $bar_html .=      "title='".__('Close Bar','ehb_lang')."'>";
                 $bar_html .=      "X</div>";
               }
-
+              
               $bar_html .= "  <div id='ehu-bar-content' style='display:block;color:{$bar_text_color};padding:2px;margin:0 auto;width:{$bar_content_width}%;'>";
               $bar_html .= do_shortcode($bar_content); 
               $bar_html .= "  </div>";
@@ -139,9 +139,6 @@ class ehbFrontend
     wp_register_style('ehb_stylesheet', $ehb_css_url,false, EHB_VERSION,'all');
     wp_enqueue_style( 'ehb_stylesheet');
   }
-
-
-
 
 }
 $ehbFrontend = new ehbFrontend();
