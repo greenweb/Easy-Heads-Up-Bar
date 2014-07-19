@@ -1,9 +1,17 @@
 /* CSS for the Easy Heads Up Bar Plug in */
 /* http://wordpress.org/plugins/easy-heads-up-bar/ */
 
-#ehu-bar div p,#ehu-bar div > div {
+/* reset */
+#ehu-bar div p,
+#ehu-bar div H1,
+#ehu-bar div H2,
+#ehu-bar div H3,
+#ehu-bar div H5,
+#ehu-bar div H6,
+#ehu-bar div > div {
   margin:4px 0;
-  padding:0
+  padding:0;
+  line-height:normal;
 }
 
 #ehu-open-button,#ehu-close-button {
