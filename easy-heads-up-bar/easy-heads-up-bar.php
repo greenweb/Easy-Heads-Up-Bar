@@ -3,7 +3,7 @@
 Plugin Name: Easy Heads Up Bar
 Plugin URI: http://www.beforesite.com/plugins/easy-heads-up-bar
 Description: An Easy to use notification (heads up) bar for your WordPress website with a linked call to action
-Version: 2.1.5
+Version: 2.1.6
 Author: Greenweb
 Author URI: http://www.greenvillweb.us 
 */
