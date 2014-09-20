@@ -51,7 +51,7 @@ Author URI: http://www.greenvillweb.us
     $ehb_plugin_loc = preg_replace( '/^https/', 'http', $ehb_plugin_loc );
   
   define( 'EHB_URL',            plugin_dir_url(__FILE__) );
-  define( 'EHB_VERSION',        '2.1.5' );
+  define( 'EHB_VERSION',        '2.1.6' );
   
   include 'lib/ehb-utility-functions.php';
   include 'lib/ehb-admin.php';
