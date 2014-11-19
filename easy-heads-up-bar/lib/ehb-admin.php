@@ -88,7 +88,7 @@ class ehbAdmin
       'exclude_from_search' => true,
       'publicly_queryable'  => false,
       'rewrite'             => false,
-      'capability_type'     => 'page',
+      'capability_type'     => array('page','post'),
     );
     register_post_type( 'heads_up_bar', $args );
 
